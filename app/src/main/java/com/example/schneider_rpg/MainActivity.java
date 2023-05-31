@@ -2,34 +2,23 @@ package com.example.schneider_rpg;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.snackbar.Snackbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.util.Log;
-import android.view.View;
-
-import androidx.core.view.WindowCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.room.Room;
 
 import com.example.schneider_rpg.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -131,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         bottomNavigationView = binding.bottomNavigationView;
 
@@ -139,10 +127,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.navigation_add_fragment) {
-                    navController.navigate(R.id.action_global_navigation_add);
+                    Log.d("testus", "clicked on add");
+                    navController.navigate(R.id.action_global_addFragment);
                     return true;
                 } else if (item.getItemId() == R.id.navigation_fragment1) {
-                    navController.navigate(R.id.action_global_navigation_first);
+                    navController.navigate(R.id.action_global_FirstFragment);
                     return true;
                 }
                 return false;
@@ -165,21 +154,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private void switchFragment(Fragment fragment) {
-        if (activeFragment == fragment)
-            return;
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if (fragment.isAdded()) {
-            fragmentTransaction.hide(activeFragment).show(fragment);
-        } else {
-            fragmentTransaction.hide(activeFragment).add(R.id.include, fragment);
-        }
-        fragmentTransaction.commit();
-
-        activeFragment = fragment;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

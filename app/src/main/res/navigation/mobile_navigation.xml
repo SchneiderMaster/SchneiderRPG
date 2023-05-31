@@ -9,13 +9,21 @@
         android:id="@+id/navigation_first"
         android:name="com.example.schneider_rpg.FirstFragment"
         android:label="First Fragment"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_navigation_first_to_navigation_add"
+            app:destination="@id/navigation_add" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_add"
         android:name="com.example.schneider_rpg.AddFragment"
         android:label="Add"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_navigation_add_to_navigation_first"
+            app:destination="@id/navigation_first" />
+    </fragment>
     <action
         android:id="@+id/action_global_navigation_add"
         app:destination="@id/navigation_add" />
