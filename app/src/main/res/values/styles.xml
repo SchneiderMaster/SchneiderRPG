@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.SchneiderRPG.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+
+
+    </style>
+
+
+
+</resources>
