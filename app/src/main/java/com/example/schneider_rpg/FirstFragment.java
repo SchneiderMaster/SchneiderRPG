@@ -6,8 +6,6 @@ import static com.example.schneider_rpg.MainActivity.sharedPreferences;
 import static com.example.schneider_rpg.MainActivity.skillDao;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -27,12 +25,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.schneider_rpg.databinding.FragmentFirstBinding;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class FirstFragment extends Fragment {
 
@@ -162,7 +158,7 @@ public class FirstFragment extends Fragment {
 
                 skills1 = skillDao.getAll();
 
-                Log.e("test", "id: " + skills1.get(finalI).id + "; xp: " + skills1.get(finalI).experience + "; max: " + getMaxExperience(skills1.get(finalI).level));
+                Log.e("test", "id: " + skills1.get(finalI).id + "; xp: " + skills1.get(finalI).experience + "; maxNumber: " + getMaxExperience(skills1.get(finalI).level));
 
                 while(skills1.get(finalI).experience >= getMaxExperience(skills1.get(finalI).level)){
 
@@ -320,7 +316,7 @@ public class FirstFragment extends Fragment {
         int progress = binding.totalLevelBar.getProgress() + gainedExp;
 
         binding.totalLevelBar.setProgress(progress);
-        Log.d("progress", "progress: " + binding.totalLevelBar.getProgress() + "; max: " + binding.totalLevelBar.getMax());
+        Log.d("progress", "progress: " + binding.totalLevelBar.getProgress() + "; maxNumber: " + binding.totalLevelBar.getMax());
 
 
         while(progress >= binding.totalLevelBar.getMax()) {

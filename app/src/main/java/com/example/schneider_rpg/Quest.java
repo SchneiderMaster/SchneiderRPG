@@ -15,7 +15,7 @@ public class Quest {
     @ColumnInfo(name = "skillId")
     public Integer skillId;
 
-    @ColumnInfo(name = "max")
+    @ColumnInfo(name = "maxNumber")
     public Integer max;
 
     @ColumnInfo(name = "progress")
