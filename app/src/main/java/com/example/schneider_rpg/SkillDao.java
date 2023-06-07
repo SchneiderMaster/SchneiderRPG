@@ -1,8 +1,6 @@
 package com.example.schneider_rpg;
 
 
-import android.graphics.Color;
-
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -44,5 +42,7 @@ public interface SkillDao {
     @Query("SELECT color FROM skill WHERE id = :id")
     Integer getColorFromId(Integer id);
 
+    @Query("SELECT name FROM skill ORDER BY id")
+    List<String> getAllSkillNames();
 
 }

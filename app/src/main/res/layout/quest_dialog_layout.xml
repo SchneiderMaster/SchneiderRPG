@@ -14,26 +14,68 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <NumberPicker
         android:id="@+id/maxNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/editQuestName"
+        app:layout_constraintBottom_toTopOf="@+id/rewardNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/isCheckable" />
+        app:layout_constraintStart_toEndOf="@+id/isCheckable"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/isCheckable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Is Checkable"
-        app:layout_constraintBottom_toTopOf="@+id/editQuestName"
+        app:layout_constraintBottom_toBottomOf="@+id/maxNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Length"
+        app:layout_constraintBottom_toTopOf="@+id/rewardNumber"
+        app:layout_constraintEnd_toEndOf="@+id/maxNumber"
+        app:layout_constraintStart_toStartOf="@+id/maxNumber"
+        app:layout_constraintTop_toBottomOf="@+id/skillType"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <EditText
+        android:id="@+id/rewardNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Reward"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editQuestName"
+        app:layout_constraintVertical_bias="0.8"
+        android:inputType="number"/>
+
+    <Spinner
+        android:id="@+id/skillType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintTop_toBottomOf="@+id/editQuestName"
+        app:layout_constraintVertical_bias="0.110000014" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skill"
+        app:layout_constraintBottom_toTopOf="@+id/skillType"
+        app:layout_constraintEnd_toEndOf="@+id/skillType"
+        app:layout_constraintStart_toStartOf="@+id/skillType" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

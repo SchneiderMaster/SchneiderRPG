@@ -90,13 +90,13 @@ public class MainActivity extends AppCompatActivity {
 //        skill.color = Color.rgb(10, 250, 245);
 //        skill.level = 0;
 //        skillDao.insert(skill);
-//
-//
-//
-//
+
+
+
+
 //        Quest quest = new Quest();
 //        quest.name = "Plane ein Date mit Leilani!";
-//        quest.maxNumber = 1;
+//        quest.max = 1;
 //        quest.progress = 0;
 //        quest.reward = 25;
 //        quest.skillId = skillDao.getIdFromName("Dating");
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        quest = new Quest();
 //        quest.name = "Besuche das Gym und mache ein Workout!";
-//        quest.maxNumber = 5;
+//        quest.max = 5;
 //        quest.progress = 0;
 //        quest.reward = 500;
 //        quest.skillId = skillDao.getIdFromName("Sport");
